@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/WeatherProject/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxdetail.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsetting.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtemp.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtime.xml" value="0.1315" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxweather.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxweatjer.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/outline_reorder_24.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/backstack_activity.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/fragment_main.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/fragment_menu.xml" value="0.17972350230414746" />
+        <entry key="..\:/WeatherProject/app/src/main/res/menu/menu_main.xml" value="0.2234375" />
       </map>
     </option>
   </component>

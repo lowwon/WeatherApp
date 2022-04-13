@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BBBBBB">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Khám phá thành phố"
+            android:textColor="#333333"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Tìm kiếm thành phố"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:layout_weight="1"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Thành phố yêu thích"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Cài đặt"
+            android:textColor="#333333"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Ngôn ngữ"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Màu sắc"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Dự báo tương lai"
+            android:textColor="#333333"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Ngày mai"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="2 Tuần"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Tuỳ chọn"
+            android:textColor="#333333"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Đánh giá"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Liên hệ"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boxsetting"
+                android:fontFamily="sans-serif-black"
+                android:padding="15dp"
+                android:text="Thoát"
+                android:textAlignment="center"
+                android:textColor="#444444"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

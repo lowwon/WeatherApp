@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:background="@color/purple_200"
+        android:textAlignment="center"
+        android:text=""
+        android:textSize="35dp"/>
+    <FrameLayout
+        android:id="@+id/container_body"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"/>
+</LinearLayout>
