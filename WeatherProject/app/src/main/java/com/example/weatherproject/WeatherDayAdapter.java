@@ -131,9 +131,9 @@ public class WeatherDayAdapter extends RecyclerView.Adapter<WeatherDayAdapter.Vi
                     break;
             }
         }
-        maxT.setText(String.valueOf(wtd.getMaxTemp()));
-        avgT.setText(String.valueOf(wtd.getAvgTemp()));
-        minT.setText(String.valueOf(wtd.getMinTemp()));
+        maxT.setText(String.valueOf(wtd.getMaxTemp()) + "°");
+        avgT.setText(String.valueOf(wtd.getAvgTemp()) + "°");
+        minT.setText(String.valueOf(wtd.getMinTemp()) + "°");
     }
 
     @Override

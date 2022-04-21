@@ -1,7 +1,11 @@
 package com.example.weatherproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +26,18 @@ public class CityFollow extends AppCompatActivity {
         listViewv = findViewById(R.id.listCityFollow);
         CityFollowAdapter cityAdapter = new CityFollowAdapter(this, listCity);
         listViewv.setAdapter(cityAdapter);
+        listViewv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String lon = String.valueOf(listCity.get(i).getLon());
+                String lat = String.valueOf(listCity.get(i).getLat());
+                String name = listCity.get(i).getName();
+                Intent intent = new Intent(CityFollow.this, InfoCity.class);
+                intent.putExtra("lon", lon);
+                intent.putExtra("lat", lat);
+                intent.putExtra("name", name);
+                startActivityForResult(intent, 2);
+            }
+        });
     }
 }

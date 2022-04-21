@@ -13,7 +13,6 @@ import java.util.List;
 
 public class CityFollowAdapter extends BaseAdapter {
     List<CityTemp> cityList = new ArrayList<>();
-    Context context;
     LayoutInflater inflater;
     String key = "https://api.openweathermap.org/data/2.5/weather";
     String API_KEY = "&appid=bc40dd0b42c7e289bb7c950d62fb64e4&units=metric";
