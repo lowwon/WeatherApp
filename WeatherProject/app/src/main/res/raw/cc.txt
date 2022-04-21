@@ -1,0 +1,71 @@
+Câu 1
+1. Lập kế hoạch
+   Bao gồm : 
+      + Thu nhập dữ liệu cần thiết
+      + Khảo sát các khả năng hiện thực
+      + Chọn giải pháp tốt nhất về giá cả và hiệu suất
+      + Các thông số về mạng LAN
+	- Loại mạng
+	- Kiến trục mạng
+	- Môi trường truyền vật lý
+	- Giao thức mạng
+	- Phần mềm mạng
+	- An toàn dữ liệu
+2. Hiện thực mạng
+   Bao gồm
+      + Cài đặt
+	- Cài đặt phần cứng
+	- Cài đặt hệ điều hành mạng
+	- Cài đặt các dịch vụ mạng
+	- Cài đặt các ứng dụng
+      + Kiểm tra
+	Kiểm tra các thành phần bằng cách cô lập và kiểm tra:
+	- Các máy tính server
+	- Các máy tính Client/Workstation
+	- Các thiết bị ngoại vi
+	- Môi trường truyền vật lý
+	- Phần mềm client, phần mềm server
+      + Tập huấn nào tạo
+	Mục đích:
+	- Sử dụng mạng hiệu quả
+	- Hoạt động ổn định
+	Đối tượng tập huấn, đào tạo:
+	- Administrators – Người quản trị
+	- Users – Người sử dụng
+3. Quản trị mạng
+    + Các chức năng trong quản trị mạng:
+	- Quản trị user
+	   Tạo và duy trì các tài khoản user
+	- Quản lý tài nguyên
+	   Hiện thực, hỗ trợ sử dụng tài nguyên
+	- Quản lý cấu hình
+	   Bảo trì, mở rộng thông tin cấu hình
+	- Quản trị hiệu suất
+	   Kiểm tra hoạt động mạng, tăng hiệu suất
+	- Bảo trì
+	   Ngăn chặn, phát hiện, giải quyết lỗi
+    + Các lớp trong quản trị mạng
+	- Lớp business: quản lý công việc của mạng, ví dụ: ngân sách, tài nguyên, kế hoạch …
+	- Lớp service: quản lý các dịch vụ cung cấp cho user
+	- Lớp network: quản lý tất cả thiết bị trên mạng
+	- Lớp element: quản lý tập hợp các thiết bị mạng cùng loại
+	- Lớp network-element: quản lý từng thiết bị mạng
+Câu 2
+Câu 3
+Mục đích cảu Home Folders
+Lưu thông tin cá nhân của user
+Là thư mục mặc định của một số phần
+mềm
+Có thể tạo trên máy Client hay tạo tậptrung tại server
++ Ưu điểm khi tạo trên Server:
+User có thể truy xuất từ máy Client bất kỳ
+Quản lý tập trung  dễ lưu trữ, quản lý
+Câu 4
+Tác dụng của Offline file
+Tác dụng khi user phải di chuyển ở nhiều
+địa điểm và nhiều mạng khác nhau
+Kết nối đến mạng khác nhau xử lý offline
+nội dung cho các tập tin công việc
+Chỉnh sửa các tập tin công việc và đồng
+bộ chúng trở lại khi có kết nối lại
+

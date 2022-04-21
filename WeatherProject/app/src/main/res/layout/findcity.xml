@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FindCity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập tên thành phố"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:paddingTop="5dp"
+        android:textColor="@color/white"
+        android:background="#111111"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/headerfind"
+        android:paddingTop="10dp">
+        <EditText
+            android:id="@+id/txtFindCity"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_weight="9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Tìm kiếm"
+            android:textSize="25dp"/>
+        <Button
+            android:id="@+id/btnFindCity"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="20dp"
+            android:text="Tìm">
+        </Button>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listCityFind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

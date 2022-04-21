@@ -8,6 +8,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,19 +70,28 @@ public class BackstackActivity extends AppCompatActivity implements GoogleApiCli
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        checksetting = 0;
+    }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        city = (TextView) findViewById(R.id.city);
         if(id == R.id.reorder){
             if(checksetting == 0){
+                city.setVisibility(View.GONE);
                 checksetting = 1;
                 replaceFragmentContent(new FragmentMenu());
             }
             else
             {
+                city.setVisibility(View.VISIBLE);
                 checksetting = 0;
                 onBackPressed();
             }
@@ -124,8 +134,9 @@ public class BackstackActivity extends AppCompatActivity implements GoogleApiCli
                 geocoder = new Geocoder(this, Locale.getDefault());
                 try {
                     List<Address> addresses = geocoder.getFromLocation(latitude, longitude,1);
-                    String city = addresses.get(0).getLocality();
-                    citya.setText(city);
+                    String add = addresses.get(0).getAddressLine(0);
+                    String []a = add.split(",");
+                    citya.setText(a[3]);
                 } catch (IOException e) {
                     citya.setText("Error");
                     e.printStackTrace();
