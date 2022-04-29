@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/boxmain"
+    android:id="@+id/menu"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/boxsettingtxt2"
+            android:padding="10dp"
+            android:id="@+id/menutxt1"
+            android:textAlignment="center"
+            android:text="@string/menuTitle1"
+            android:textColor="#333333"
+            android:textSize="20dp" />
+        <Button
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/boxsettingtxt"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnFind"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/btnFindCity"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="15dp">
+        </Button>
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnLoveCity"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:background="@drawable/boxsettingtxt"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/btnFlCity"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></Button>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/boxsettingtxt3"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/menutxt2"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:text="@string/menuTitle2"
+            android:textColor="#333333"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/caidat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@drawable/boxsettingtxt"
+            android:text="@string/btnSetting"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></Button>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/boxsettingtxt"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/menuTitle3"
+            android:id="@+id/menutxt3"
+            android:textColor="#333333"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="@drawable/boxsettingtxt"
+            android:text="@string/btnRate"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></Button>
+
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btnContact"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/boxsettingtxt"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/btnContact"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp">
+
+        </Button>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

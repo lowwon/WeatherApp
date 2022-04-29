@@ -6,13 +6,20 @@
     tools:context=".InfoCity"
     android:orientation="vertical">
     <Button
+        android:id="@+id/delCityFl"
         android:layout_gravity="end"
         android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Xoá"
+        android:text="@string/delete"
         android:textSize="15dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/tam1"/>
     <ListView
+        android:padding="10dp"
         android:id="@+id/listCityInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listKeyLang">
+        <item>en</item>
+        <item>vi</item>
+        <item>cn</item>
+    </string-array>
+
+    <string-array name="listValuesLang">
+        <item>English Language</item>
+        <item>Việt Nam Language</item>
+        <item>China Language</item>
+    </string-array>
+    <string-array name="listKeyColor">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="listValuesColor">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+</resources>

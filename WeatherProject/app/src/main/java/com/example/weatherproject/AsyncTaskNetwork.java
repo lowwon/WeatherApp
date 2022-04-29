@@ -1,29 +1,20 @@
 package com.example.weatherproject;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
+import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -35,11 +26,13 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
     TextView visibility,  wind,  rain,  uvi,  may, day, time;
     RecyclerView rv,listDay;
     ImageView iconMain;
-    FragmentActivity c;
+    Context c;
+    AlertDialog.Builder builder;
     dialog loadingdialog;
     ArrayList<WeatherTime> weatherTimes = new ArrayList<>();
     ArrayList<WeatherDay> weatherDays = new ArrayList<>();
-    public AsyncTaskNetwork(FragmentActivity c, TextView city, TextView temp, TextView main, TextView sunRise, TextView sunSet, TextView feel_like, TextView preesure, TextView humidity, TextView visibility, TextView wind, TextView rain, TextView uvi, TextView may, TextView day, TextView time, ImageView iconMain, RecyclerView rv, RecyclerView lstday) {
+
+    public AsyncTaskNetwork(Context backstackActivity, TextView city, TextView temp, TextView main, TextView sunRise, TextView sunSet, TextView feel_like, TextView preesure, TextView humidity, TextView visibility, TextView wind, TextView rain, TextView uvi, TextView may, TextView day, TextView time, ImageView iconMain, RecyclerView rv, RecyclerView lstday) {
         this.city = city;
         this.temp = temp;
         this.main = main;
@@ -58,9 +51,11 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
         this.rv = rv;
         this.iconMain = iconMain;
         this.listDay = lstday;
-        c = c;
-        loadingdialog = new dialog(c);
+        c = backstackActivity;
+        builder = new AlertDialog.Builder(c);
+        loadingdialog = new dialog((Activity) c);
     }
+
     protected void onPreExecute() {
         super.onPreExecute();
         loadingdialog.startLoadingdialog();
@@ -78,10 +73,12 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
             connection.setRequestMethod("GET");
             connection.connect();
             JSONObject jsonObject;
+            JSONObject jsonObject2;
             resCode = connection.getResponseCode();
             if (resCode == HttpURLConnection.HTTP_OK) {
                 jsonObject = MyJsonReader.readJsonFromUrl(strings[0]);
-                publishProgress(jsonObject);
+                jsonObject2 = MyJsonReader.readJsonFromUrl(strings[1]);
+                publishProgress(jsonObject,jsonObject2);
             }
 
         } catch (IOException | JSONException e) {
@@ -94,6 +91,7 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
     protected void onProgressUpdate(JSONObject... values) {
         super.onProgressUpdate(values);
         JSONObject jsonObject = values[0];
+        JSONObject jsonCity = values[1];
         SimpleDateFormat time = new SimpleDateFormat("HH:mm");
         long currentDateTime = 0;
         try {
@@ -102,6 +100,9 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
             JSONArray weatherTime = jsonObject.getJSONArray("hourly");
             JSONArray weatherDay = jsonObject.getJSONArray("daily");
             Date saveTime = null;
+            if(jsonCity.has("name")){
+                this.city.setText(jsonCity.getString("name"));
+            }
             if (current.has("feels_like")) {
                 this.feel.setText(String.valueOf(Math.round(current.getInt("feels_like") + 1)) + "°");
             }
@@ -153,71 +154,63 @@ public class AsyncTaskNetwork extends AsyncTask<String, JSONObject, Void> {
                 String mainT = weather.getString("icon");
                 String timeS = time.format(saveTime);
                 int hour = Integer.parseInt(timeS.substring(0, 2));
-                if (hour >= 6 && hour < 18) {
-                    switch (mainT) {
-                        case "01d":
-                            this.iconMain.setImageResource(R.drawable.a01d);
-                            break;
-                        case "02d":
-                            this.iconMain.setImageResource(R.drawable.a02d);
-                            break;
-                        case "03d":
-                            this.iconMain.setImageResource(R.drawable.a03d);
-                            break;
-                        case "04d":
-                            this.iconMain.setImageResource(R.drawable.a04d);
-                            break;
-                        case "09d":
-                            this.iconMain.setImageResource(R.drawable.a09d);
-                            break;
-                        case "10d":
-                            this.iconMain.setImageResource(R.drawable.a10d);
-                            break;
-                        case "11d":
-                            this.iconMain.setImageResource(R.drawable.a11d);
-                            break;
-                        case "13d":
-                            this.iconMain.setImageResource(R.drawable.a13d);
-                            break;
-                        case "50d":
-                            this.iconMain.setImageResource(R.drawable.a50d);
-                            break;
-                        default:
-                            throw new IllegalStateException("Unexpected value: " + mainT);
-                    }
-                }
-                else {
-                    switch (mainT) {
-                        case "01n":
-                            this.iconMain.setImageResource(R.drawable.a01n);
-                            break;
-                        case "02n":
-                            this.iconMain.setImageResource(R.drawable.a02n);
-                            break;
-                        case "03n":
-                            this.iconMain.setImageResource(R.drawable.a03n);
-                            break;
-                        case "04n":
-                            this.iconMain.setImageResource(R.drawable.a04n);
-                            break;
-                        case "09n":
-                            this.iconMain.setImageResource(R.drawable.a09n);
-                            break;
-                        case "10n":
-                            this.iconMain.setImageResource(R.drawable.a10n);
-                            break;
-                        case "11n":
-                            this.iconMain.setImageResource(R.drawable.a11n);
-                            break;
-                        case "13n":
-                            this.iconMain.setImageResource(R.drawable.a13n);
-                            break;
-                        case "50n":
-                            this.iconMain.setImageResource(R.drawable.a50n);
-                            break;
-                        default:
-                            throw new IllegalStateException("Unexpected value: " + mainT);
-                    }
+                switch (mainT) {
+                    case "01d":
+                        this.iconMain.setImageResource(R.drawable.a01d);
+                        break;
+                    case "02d":
+                        this.iconMain.setImageResource(R.drawable.a02d);
+                        break;
+                    case "03d":
+                        this.iconMain.setImageResource(R.drawable.a03d);
+                        break;
+                    case "04d":
+                        this.iconMain.setImageResource(R.drawable.a04d);
+                        break;
+                    case "09d":
+                        this.iconMain.setImageResource(R.drawable.a09d);
+                        break;
+                    case "10d":
+                        this.iconMain.setImageResource(R.drawable.a10d);
+                        break;
+                    case "11d":
+                        this.iconMain.setImageResource(R.drawable.a11d);
+                        break;
+                    case "13d":
+                        this.iconMain.setImageResource(R.drawable.a13d);
+                        break;
+                    case "50d":
+                        this.iconMain.setImageResource(R.drawable.a50d);
+                        break;
+                    case "01n":
+                        this.iconMain.setImageResource(R.drawable.a01n);
+                        break;
+                    case "02n":
+                        this.iconMain.setImageResource(R.drawable.a02n);
+                        break;
+                    case "03n":
+                        this.iconMain.setImageResource(R.drawable.a03n);
+                        break;
+                    case "04n":
+                        this.iconMain.setImageResource(R.drawable.a04n);
+                        break;
+                    case "09n":
+                        this.iconMain.setImageResource(R.drawable.a09n);
+                        break;
+                    case "10n":
+                        this.iconMain.setImageResource(R.drawable.a10n);
+                        break;
+                    case "11n":
+                        this.iconMain.setImageResource(R.drawable.a11n);
+                        break;
+                    case "13n":
+                        this.iconMain.setImageResource(R.drawable.a13n);
+                        break;
+                    case "50n":
+                        this.iconMain.setImageResource(R.drawable.a50n);
+                        break;
+                    default:
+                        break;
                 }
                 this.main.setText(main);
             }

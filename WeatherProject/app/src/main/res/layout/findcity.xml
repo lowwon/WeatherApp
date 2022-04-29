@@ -5,16 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".FindCity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nhập tên thành phố"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:paddingTop="5dp"
-        android:textColor="@color/white"
-        android:background="#111111"
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,8 +22,13 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
-            android:hint="Tìm kiếm"
+            android:hint="@string/findcity"
             android:textSize="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/tam2"/>
         <Button
             android:id="@+id/btnFindCity"
             android:backgroundTint="#EEEEEE"
@@ -46,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:textSize="20dp"
-            android:text="Tìm">
+            android:text="@string/search">
         </Button>
     </LinearLayout>
 

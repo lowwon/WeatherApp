@@ -5,17 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CityFollow">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Thành phố của bạn"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/white"
-        android:background="#111111"
-        />
     <ListView
         android:id="@+id/listCityFollow"
         android:layout_width="match_parent"

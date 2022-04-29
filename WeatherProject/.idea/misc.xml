@@ -3,31 +3,52 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1175" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxcityname.xml" value="0.104" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxdetail.xml" value="0.137" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxmain.xml" value="0.1" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxmain2.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxmain3.xml" value="0.1425" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsetting.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsetting2.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsettingtxt.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsettingtxt2.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxsettingtxt3.xml" value="0.1425" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtemp.xml" value="0.137" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtemp2.xml" value="0.1" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtemp3.xml" value="0.1425" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxtime.xml" value="0.1315" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxweather.xml" value="0.137" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/boxweatjer.xml" value="0.137" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/buttonheaderfind.xml" value="0.135" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/dialog.xml" value="0.1" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/headerfind.xml" value="0.135" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/ic_baseline_check_circle_outline_24.xml" value="0.1425" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1175" />
+        <entry key="..\:/WeatherProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1175" />
         <entry key="..\:/WeatherProject/app/src/main/res/drawable/outline_reorder_24.xml" value="0.137" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/backstack_activity.xml" value="0.25" />
-        <entry key="..\:/WeatherProject/app/src/main/res/layout/city_follow.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/city_follow.xml" value="0.2" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/city_info.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/contact.xml" value="0.264" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/error_load.xml" value="0.2" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/findcity.xml" value="0.2" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/fragment_main.xml" value="0.2" />
-        <entry key="..\:/WeatherProject/app/src/main/res/layout/fragment_menu.xml" value="0.264" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/fragment_menu.xml" value="0.1" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/info_city.xml" value="0.264" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/list_city_find.xml" value="0.2234375" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/list_city_follow.xml" value="0.2" />
-        <entry key="..\:/WeatherProject/app/src/main/res/layout/list_city_info.xml" value="0.49768160741885625" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/list_city_info.xml" value="0.264" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/list_weather_time.xml" value="0.2234375" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/loading.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/menu.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/meun.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/layout/success_load.xml" value="0.176" />
         <entry key="..\:/WeatherProject/app/src/main/res/layout/timeday.xml" value="0.176" />
         <entry key="..\:/WeatherProject/app/src/main/res/menu/menu_main.xml" value="0.2234375" />
+        <entry key="..\:/WeatherProject/app/src/main/res/xml/prefs.xml" value="0.1" />
       </map>
     </option>
   </component>

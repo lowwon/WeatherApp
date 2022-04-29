@@ -1,8 +1,12 @@
 package com.example.weatherproject;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -11,7 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,19 +33,26 @@ import java.util.List;
 
 public class FindCity extends AppCompatActivity {
     List<City> listCity = new ArrayList<>();
-    TextView rs;
+    TextView tam;
     EditText txtFind;
     Button btnFind;
     ListView listViewx;
     DatabaseHandler db;
     AlertDialog.Builder builder;
+    dialog loadingdialog;
     List<City> listT = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        changeColor();
         setContentView(R.layout.findcity);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.citySearch);
+        loadingdialog = new dialog(FindCity.this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnFind = (Button) findViewById(R.id.btnFindCity);
         txtFind = (EditText) findViewById(R.id.txtFindCity);
+        tam = findViewById(R.id.tam2);
         listViewx = (ListView) findViewById(R.id.listCityFind);
         builder = new AlertDialog.Builder(this);
         loadCity();
@@ -49,43 +62,67 @@ public class FindCity extends AppCompatActivity {
                 findInListCity();
             }
         });
-        listViewx.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(getApplicationContext(),"aaa",Toast.LENGTH_LONG).show();
-                db = new DatabaseHandler(getApplicationContext());
-                String cityName = listT.get(i).getName() + ", " + listT.get(i).getCity();
-                Double lat = listT.get(i).getLat();
-                Double lon = listT.get(i).getLon();
-                CityTemp cityTemp = new CityTemp(cityName, lat, lon);
-                List<CityTemp> listCityT = db.getAllCities();
-                for (CityTemp c: listCityT) {
-                    if(c.getName().equals(cityName))
-                    {
-                        builder.setTitle("Thông báo");
-                        builder.setMessage("Bạn đã theo dõi thành phố này");
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        });
-                        AlertDialog alert = builder.create();
-                        alert.show();
-                        return;
-                    }
-                }
-                db.addCity(cityTemp);
-                builder.setTitle("Thông báo");
-                builder.setMessage("Thêm thành công");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        listViewx.setOnItemClickListener((adapterView, view, i, l) -> {
+            db = new DatabaseHandler(getApplicationContext());
+            String cityName = listT.get(i).getName() + ", " + listT.get(i).getCity();
+            Double lat = listT.get(i).getLat();
+            Double lon = listT.get(i).getLon();
+            CityTemp cityTemp = new CityTemp(cityName, lat, lon);
+            List<CityTemp> listCityT = db.getAllCities();
+            if(listCityT.size() == 10)
+            {
+                tam.setText(R.string.err1);
+                String err = tam.getText().toString();
+                loadingdialog.startLoadingdialog();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                    public void run() {
+                        loadingdialog.fail(err);
                     }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
+                }, 1000);
+                return;
             }
+            for (CityTemp c: listCityT) {
+                if(c.getName().equals(cityName))
+                {
+                    tam.setText(R.string.err2);
+                    String err = tam.getText().toString();
+                    loadingdialog.startLoadingdialog();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingdialog.fail(err);
+                        }
+                    }, 1000);
+                    return;
+                }
+            }
+            db.addCity(cityTemp);
+            tam.setText(R.string.addsuc);
+            String err = tam.getText().toString();
+            loadingdialog.startLoadingdialog();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loadingdialog.success(err, 0);
+                }
+            }, 1000);
         });
+    }
+    private void changeColor(){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(FindCity.this);
+        String color = prefs.getString("listColor","Blue");
+        if(color.equals("Blue")){
+            setTheme(R.style.Theme_MyAppTheme1);
+        }else if(color.equals("Red")){
+            setTheme(R.style.Theme_MyAppTheme2);
+        }
+        else{
+            setTheme(R.style.Theme_MyAppTheme3);
+        }
     }
     public void loadCity(){
         String json = null;
@@ -135,5 +172,15 @@ public class FindCity extends AppCompatActivity {
             CityAdapter cityAdapter = new CityAdapter(this, listT);
             listViewx.setAdapter(cityAdapter);
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -2,23 +2,31 @@ package com.example.weatherproject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class CityFollowAdapter extends BaseAdapter {
     List<CityTemp> cityList = new ArrayList<>();
+    List<String> temp = new ArrayList<String>();
+    List<String> time = new ArrayList<String>();
     LayoutInflater inflater;
-    String key = "https://api.openweathermap.org/data/2.5/weather";
-    String API_KEY = "&appid=bc40dd0b42c7e289bb7c950d62fb64e4&units=metric";
-    public CityFollowAdapter(Context context, List<CityTemp> cityList)
+    public CityFollowAdapter(Context context, List<CityTemp> cityList, List<String>  temp, List<String>  time)
     {
         this.cityList = cityList;
+        this.temp = temp;
+        this.time = time;
         inflater = (LayoutInflater.from(context));
     }
 
@@ -40,16 +48,17 @@ public class CityFollowAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.city_follow, null);
-        Context ac = inflater.getContext();
-        String nameCity = cityList.get(i).getName();
-        String lat = String.valueOf(cityList.get(i).getLat());
-        String lon = String.valueOf(cityList.get(i).getLon());
-        String url = key + "?lat=" + lat + "&lon=" + lon + API_KEY;
-        TextView time = view.findViewById(R.id.timeCityFl);
-        TextView name = view.findViewById(R.id.nameCityFl);
-        TextView temp = view.findViewById(R.id.tempCityFl);
-        name.setText(nameCity);
-        new AsyncTaskNetWork2(ac, time, temp).execute(url);
+        TextView nameTxt = view.findViewById(R.id.nameCityFl);
+        TextView timeTxt = view.findViewById(R.id.timeCityFl);
+        TextView tempTxt = view.findViewById(R.id.tempCityFl);
+        String nameS = cityList.get(i).getName();
+        nameTxt.setText(nameS);
+        tempTxt.setText(temp.get(i) + "°");
+        long timeL = Long.parseLong(time.get(i));
+        SimpleDateFormat time = new SimpleDateFormat("HH:mm");
+        Date timeD = new Date(timeL * 1000);
+        String timeS = time.format(timeD);
+        timeTxt.setText(timeS);
         return view;
     }
 }
