@@ -27,7 +27,6 @@ public class PrefActivity extends PreferenceActivity{
     Locale myLocale;
     String langS, colorS;
     SharedPreferences prefs;
-    BackstackActivity ba;
     AlertDialog.Builder builder;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -104,6 +103,15 @@ public class PrefActivity extends PreferenceActivity{
                 break;
             case "cn":
                 myLocale = new Locale("za", "CN");
+                break;
+            case "ru":
+                myLocale = new Locale("ru", "RU");
+                break;
+            case "de":
+                myLocale = new Locale("de", "DE");
+                break;
+            case "it":
+                myLocale = new Locale("it", "IT");
                 break;
             default:
                 break;

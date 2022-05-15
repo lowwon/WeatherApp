@@ -22,6 +22,7 @@
                 <TextView
                     android:layout_weight="1"
                     android:id="@+id/dateTimeInfo"
+                    android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:textAlignment="center"
@@ -41,6 +42,7 @@
                     android:id="@+id/mainInfo"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="25dp" />
             </LinearLayout>
@@ -56,6 +58,7 @@
                 android:padding="3dp"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="match_parent"
                 android:textSize="70dp" />
         </LinearLayout>
@@ -77,6 +80,7 @@
                     android:padding="3dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="@string/min"/>
@@ -92,21 +96,25 @@
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textSize="25dp" />
             </LinearLayout>
             <TextView
                 android:layout_width="1dp"
                 android:background="@color/black"
+                android:textColor="@color/white"
                 android:layout_height="match_parent"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <TextView
                     android:padding="3dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="@string/max"/>
@@ -120,6 +128,7 @@
                     android:id="@+id/maxTempInfo"
                     android:padding="3dp"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="25dp" />
@@ -137,6 +146,7 @@
                     android:padding="3dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="@string/night"/>
@@ -152,6 +162,7 @@
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textSize="25dp" />
             </LinearLayout>
             <TextView
@@ -167,6 +178,7 @@
                     android:padding="3dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="@string/eve"/>
@@ -182,6 +194,7 @@
                     android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textSize="25dp" />
             </LinearLayout>
             <TextView
@@ -190,12 +203,14 @@
                 android:layout_height="match_parent"/>
             <LinearLayout
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <TextView
                     android:padding="3dp"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -203,6 +218,7 @@
                 <TextView
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:background="@color/black"
                     android:layout_height="1dp"/>
@@ -210,6 +226,7 @@
                     android:id="@+id/MornTempInfo"
                     android:padding="3dp"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="25dp" />

@@ -15,6 +15,7 @@
             android:id="@+id/thu"
             android:layout_weight="4"
             android:textSize="25dp"
+            android:textColor="@color/white"
             android:text="Thứ tư"/>
         <ImageView
             android:layout_weight="0"
@@ -29,6 +30,7 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:id="@+id/maxTempDay"
+            android:textColor="@color/white"
             android:textSize="25dp"
             android:text="36"/>
         <TextView
@@ -38,6 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/avgTempDay"
             android:textSize="25dp"
+            android:textColor="@color/white"
             android:text="33"/>
         <TextView
             android:layout_weight="1"
@@ -46,6 +49,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/minTempDay"
             android:textSize="25dp"
+            android:textColor="@color/white"
             android:text="27"/>
     </LinearLayout>
 </LinearLayout>

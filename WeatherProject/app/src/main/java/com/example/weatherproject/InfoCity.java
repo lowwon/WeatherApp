@@ -79,6 +79,12 @@ public class InfoCity extends AppCompatActivity {
         }else if(color.equals("Red")){
             setTheme(R.style.Theme_MyAppTheme2);
         }
+        else if(color.equals("Pink")){
+            setTheme(R.style.Theme_MyAppTheme4);
+        }
+        else if(color.equals("Violet")){
+            setTheme(R.style.Theme_MyAppTheme5);
+        }
         else{
             setTheme(R.style.Theme_MyAppTheme3);
         }

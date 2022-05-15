@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/error"
-        android:textSize="30dp"/>
+        android:textSize="25dp"/>
     <Button
         android:id="@+id/backTo"
         android:layout_width="wrap_content"

@@ -50,7 +50,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
         try{
             long a = Long.parseLong(time);
             Date Date = new Date(a*1000);
-            String time1 = sTime.format(Date);
+            String time1 = sTime.format(Date) ;
             hour = Integer.parseInt(time1);
             timeText.setText(time1);
         }catch (Exception e){

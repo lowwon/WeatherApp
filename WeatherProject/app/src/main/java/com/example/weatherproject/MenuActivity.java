@@ -48,6 +48,14 @@ public class MenuActivity extends AppCompatActivity {
             setTheme(R.style.Theme_MyAppTheme2);
             colorMain = "red";
         }
+        else if(color.equals("Pink")){
+            setTheme(R.style.Theme_MyAppTheme4);
+            colorMain = "pink";
+        }
+        else if(color.equals("Violet")){
+            setTheme(R.style.Theme_MyAppTheme5);
+            colorMain = "violet";
+        }
         else{
             setTheme(R.style.Theme_MyAppTheme3);
             colorMain = "green";
@@ -79,6 +87,18 @@ public class MenuActivity extends AppCompatActivity {
             txt1.setBackgroundResource(R.drawable.boxsettingtxt2);
             txt2.setBackgroundResource(R.drawable.boxsettingtxt2);
             txt3.setBackgroundResource(R.drawable.boxsettingtxt2);
+        }
+        else if(colorMain.equals("pink")){
+            rl.setBackgroundResource(R.drawable.boxmain4);
+            txt1.setBackgroundResource(R.drawable.boxsettingtxt4);
+            txt2.setBackgroundResource(R.drawable.boxsettingtxt4);
+            txt3.setBackgroundResource(R.drawable.boxsettingtxt4);
+        }
+        else if(colorMain.equals("violet")){
+            rl.setBackgroundResource(R.drawable.boxmain5);
+            txt1.setBackgroundResource(R.drawable.boxsettingtxt5);
+            txt2.setBackgroundResource(R.drawable.boxsettingtxt5);
+            txt3.setBackgroundResource(R.drawable.boxsettingtxt5);
         }
         else{
             rl.setBackgroundResource(R.drawable.boxmain3);
@@ -151,6 +171,15 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case "cn":
                 myLocale = new Locale("za", "CN");
+                break;
+            case "ru":
+                myLocale = new Locale("ru", "RU");
+                break;
+            case "de":
+                myLocale = new Locale("de", "DE");
+                break;
+            case "it":
+                myLocale = new Locale("it", "IT");
                 break;
             default:break;
         }

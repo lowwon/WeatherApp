@@ -4,22 +4,32 @@
         <item>en</item>
         <item>vi</item>
         <item>cn</item>
+        <item>de</item>
+        <item>it</item>
+        <item>ru</item>
     </string-array>
 
     <string-array name="listValuesLang">
         <item>English Language</item>
         <item>Việt Nam Language</item>
         <item>China Language</item>
+        <item>Gemany Language</item>
+        <item>Italia Language</item>
+        <item>Russia Language</item>
     </string-array>
     <string-array name="listKeyColor">
         <item>Blue</item>
         <item>Red</item>
         <item>Green</item>
+        <item>Pink</item>
+        <item>Violet</item>
     </string-array>
 
     <string-array name="listValuesColor">
         <item>Blue</item>
         <item>Red</item>
         <item>Green</item>
+        <item>Pink</item>
+        <item>Violet</item>
     </string-array>
 </resources>
