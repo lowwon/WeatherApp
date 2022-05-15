@@ -124,20 +124,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         }
     }
     private void reminderNotification() {
-        db = new DatabaseHandler(this);
-        List<NotiTemp>notiTemps = db.getAllNoties();
-        if(notiTemps.size() == 0){
-            NotiTemp notiTemp = new NotiTemp(1);
-            db.addNotiTemp(notiTemp);
-            NotificationUtils notificationUtils = new NotificationUtils(this);
-            Calendar alarmMorn = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-            alarmMorn.set(Calendar.HOUR_OF_DAY, 20);
-            alarmMorn.set(Calendar.MINUTE, 0);
-            alarmMorn.set(Calendar.SECOND, 0);
-            alarmMorn.set(Calendar.MILLISECOND, 0);
-            long stringReminder = alarmMorn.getTimeInMillis();
-            notificationUtils.setReminder(stringReminder);
-        }
+        NotificationUtils notificationUtils = new NotificationUtils(this);
+        Calendar alarmMorn = Calendar.getInstance();
+        alarmMorn.set(Calendar.HOUR_OF_DAY, 7);
+        alarmMorn.set(Calendar.MINUTE, 30);
+        alarmMorn.set(Calendar.SECOND, 0);
+        long stringReminder = alarmMorn.getTimeInMillis();
+//        long _currentTime = System.currentTimeMillis();
+//        long tenSeconds = 1000 * 10;
+//        long _triggerReminder = _currentTime + tenSeconds;
+        notificationUtils.setReminder(stringReminder);
         return;
     }
 

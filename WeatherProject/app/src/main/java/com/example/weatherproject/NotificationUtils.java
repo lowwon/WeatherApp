@@ -16,13 +16,13 @@ public class NotificationUtils extends ContextWrapper
 {
 
     private static final String CHANNEL_ID = "";
-    private NotificationManager notificationManager;
-    private Context context;
+    private NotificationManager _notificationManager;
+    private Context _context;
 
     public NotificationUtils(Context base)
     {
         super(base);
-        context = base;
+        _context = base;
         createChannel();
     }
 
@@ -40,7 +40,7 @@ public class NotificationUtils extends ContextWrapper
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "A", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "a", NotificationManager.IMPORTANCE_DEFAULT);
             channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
             getManager().createNotificationChannel(channel);
         }
@@ -48,19 +48,22 @@ public class NotificationUtils extends ContextWrapper
 
     public NotificationManager getManager()
     {
-        if(notificationManager == null)
+        if(_notificationManager == null)
         {
-            notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            _notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
-        return notificationManager;
+
+        return _notificationManager;
     }
 
     public void setReminder(long timeInMillis)
     {
-        Intent intent = new Intent(context, ReminderBroadcast.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, timeInMillis, AlarmManager.INTERVAL_DAY,pendingIntent);
+        Intent _intent = new Intent(_context, ReminderBroadcast.class);
+        PendingIntent _pendingIntent = PendingIntent.getBroadcast(_context, 0, _intent, 0);
+
+        AlarmManager _alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        _alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, timeInMillis,AlarmManager.INTERVAL_DAY, _pendingIntent);
     }
 
 }
