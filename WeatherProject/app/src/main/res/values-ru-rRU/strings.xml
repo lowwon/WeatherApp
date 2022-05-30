@@ -53,4 +53,6 @@
     <string name="contact2">Отличное упражнение по программированию для мобильных устройств</string>
     <string name="contact3">Контактное лицо:</string>
     <string name="set2">Успешное изменение цвета, перезапустите приложение</string>
+    <string name="noti1">Доброе утро, дорогая</string>
+    <string name="noti2">Посмотрим сегодняшнюю погоду</string>
 </resources>

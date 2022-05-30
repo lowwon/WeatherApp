@@ -52,4 +52,6 @@
     <string name="contact2">Bài tập lớn môn lập trình thiết bị di động</string>
     <string name="contact3">Thông tin liên hệ : </string>
     <string name="set2">Thay đổi màu thành công, vui lòng khởi động lại ứng dụng</string>
+    <string name="noti1">Buổi sáng tốt lành nhé bạn yêu</string>
+    <string name="noti2">Xem ngay thời tiết hôm nay thôi nào</string>
 </resources>

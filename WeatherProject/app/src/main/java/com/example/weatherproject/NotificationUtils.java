@@ -28,12 +28,20 @@ public class NotificationUtils extends ContextWrapper
 
     public NotificationCompat.Builder setNotification(String title, String body)
     {
-        return new NotificationCompat.Builder(this, CHANNEL_ID)
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
+        notificationBuilder.setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_launcher_background)
+                .setTicker("Hearty365")
                 .setContentTitle(title)
-                .setContentText(body)
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setContentText(body);
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        notificationBuilder.setContentIntent(pendingIntent);
+//        _notificationManager.notify(1, notificationBuilder.build());
+        return notificationBuilder;
     }
 
     private void createChannel()
@@ -52,14 +60,13 @@ public class NotificationUtils extends ContextWrapper
         {
             _notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
-
         return _notificationManager;
     }
 
     public void setReminder(long timeInMillis)
     {
         Intent _intent = new Intent(_context, ReminderBroadcast.class);
-        PendingIntent _pendingIntent = PendingIntent.getBroadcast(_context, 0, _intent, 0);
+        PendingIntent _pendingIntent = PendingIntent.getBroadcast(_context, 0, _intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager _alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 

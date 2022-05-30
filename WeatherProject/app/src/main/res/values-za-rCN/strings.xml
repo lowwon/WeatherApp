@@ -52,4 +52,6 @@
     <string name="contact2">移动设备编程的绝佳练习</string>
     <string name="contact3">联系方式：</string>
     <string name="set2">换色成功，请重启应用</string>
+    <string name="noti1">早安亲爱的</string>
+    <string name="noti2">看看今天的天气</string>
 </resources>

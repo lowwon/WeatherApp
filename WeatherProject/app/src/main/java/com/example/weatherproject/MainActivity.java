@@ -1,6 +1,8 @@
 package com.example.weatherproject;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -56,6 +58,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -124,17 +127,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         }
     }
     private void reminderNotification() {
-        NotificationUtils notificationUtils = new NotificationUtils(this);
-        Calendar alarmMorn = Calendar.getInstance();
-        alarmMorn.set(Calendar.HOUR_OF_DAY, 7);
-        alarmMorn.set(Calendar.MINUTE, 30);
-        alarmMorn.set(Calendar.SECOND, 0);
-        long stringReminder = alarmMorn.getTimeInMillis();
-//        long _currentTime = System.currentTimeMillis();
-//        long tenSeconds = 1000 * 10;
-//        long _triggerReminder = _currentTime + tenSeconds;
-        notificationUtils.setReminder(stringReminder);
-        return;
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 40);
+        calendar.set(Calendar.SECOND, 0);
+        int curHr = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int miHr = Calendar.getInstance().get(Calendar.MINUTE);
+        if (curHr >= 9 && miHr >= 40)
+        {
+            calendar.add(Calendar.DATE, 1);
+        }
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     private void loadFirst(){

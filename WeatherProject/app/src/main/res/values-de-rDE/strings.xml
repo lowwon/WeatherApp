@@ -53,4 +53,6 @@
     <string name="contact2">Hervorragende Übung in der Programmierung für Mobilgeräte</string>
     <string name="contact3">Kontakt:</string>
     <string name="set2">Farbwechsel erfolgreich, bitte Anwendung neu starten</string>
+    <string name="noti1">Guten Morgen Liebling</string>
+    <string name="noti2">Lass uns das heutige Wetter sehen</string>
 </resources>

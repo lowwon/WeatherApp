@@ -52,4 +52,6 @@
     <string name="contact2">Great exercise for mobile device programming</string>
     <string name="contact3">Contact Info :</string>
     <string name="set2">Change color successful, please restart the app</string>
+    <string name="noti1">Good morning dear</string>
+    <string name="noti2">Let see today weather</string>
 </resources>
