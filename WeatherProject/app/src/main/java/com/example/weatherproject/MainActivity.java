@@ -131,12 +131,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 9);
-        calendar.set(Calendar.MINUTE, 40);
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
+        calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         int curHr = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        int miHr = Calendar.getInstance().get(Calendar.MINUTE);
-        if (curHr >= 9 && miHr >= 40)
+        if (curHr >= 7)
         {
             calendar.add(Calendar.DATE, 1);
         }

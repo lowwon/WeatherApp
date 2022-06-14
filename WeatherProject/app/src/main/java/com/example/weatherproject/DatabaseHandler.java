@@ -16,14 +16,11 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "weatherDB";
     private static final String TABLE_CITY = "cities";
-    private static final String TABLE_NOTI = "noti";
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_LAT = "lat";
     private static final String KEY_LON = "lon";
 
-    private static final String KEY_NOTI_ID = "id";
-    private static final String KEY_CHECK_NOTI = "checknoti";
 
     public DatabaseHandler(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,47 +29,13 @@ public class DatabaseHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String CREATE_CITY_TABLE = "CREATE TABLE " + TABLE_CITY + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_LAT + " DOUBLE," + KEY_LON + " DOUBLE" + ")";
-        String CREATE_NOTI_TABLE = "CREATE TABLE " + TABLE_NOTI + "(" + KEY_NOTI_ID + " INTEGER PRIMARY KEY," + KEY_CHECK_NOTI + " INTEGER" + ")";
         sqLiteDatabase.execSQL(CREATE_CITY_TABLE);
-        sqLiteDatabase.execSQL(CREATE_NOTI_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_CITY);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTI);
         onCreate(sqLiteDatabase);
-    }
-    public NotiTemp getNoti(int id){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NOTI, new String[]{KEY_NOTI_ID, KEY_CHECK_NOTI}, KEY_ID +"+=?", new String[] {String.valueOf(id)}, null,null,null,null);
-        if(cursor != null){
-            cursor.moveToFirst();
-        }
-        NotiTemp noti = new NotiTemp(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)));
-        return noti;
-    }
-    void addNotiTemp(NotiTemp notiTemp){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_CHECK_NOTI, notiTemp.getCheck());
-        db.insert(TABLE_NOTI, null, values);
-        db.close();
-    }
-    public List<NotiTemp> getAllNoties(){
-        List<NotiTemp> notiTemps = new ArrayList<>();
-        String selectQuery = "SELECT * FROM "+ TABLE_NOTI;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor curson = db.rawQuery(selectQuery, null);
-        if(curson.moveToFirst()){
-            do{
-                NotiTemp notiTemp = new NotiTemp();
-                notiTemp.setId(Integer.parseInt(curson.getString(0)));
-                notiTemp.setCheck(Integer.parseInt(curson.getString(1)));
-                notiTemps.add(notiTemp);
-            }while(curson.moveToNext() );
-        }
-        return notiTemps;
     }
     public CityTemp getCity(int id){
         SQLiteDatabase db = this.getReadableDatabase();
